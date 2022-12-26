@@ -1,5 +1,3 @@
-import styles from "./page.module.css"
-
 export default function Home() {
-  return <div className={styles.heading}>Welcome</div>
+  return <div className="text-3xl font-bold">Welcome</div>
 }
