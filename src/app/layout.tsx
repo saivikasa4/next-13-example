@@ -12,7 +12,9 @@ export default function RootLayout({
         <meta name="description" content="An example app" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>{children}</body>
+      <body className="py-8 md:py-24 w-11/12 md:w-auto max-w-screen-md mx-auto">
+        {children}
+      </body>
     </html>
   )
 }
