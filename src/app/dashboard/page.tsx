@@ -31,7 +31,7 @@ function Dashboard() {
       <section>
         <Link
           href="/dashboard/post/create"
-          className="md:w-[160px] md:h-[160px] font-medium hover:bg-blue-500 transition-all duration-150 ease-in-out hover:text-white dark:hover:text-black rounded-xl flex md:text-xl flex-col items-center justify-center text-blue-500 border border-blue-500"
+          className="md:w-[160px] md:h-[160px] font-medium hover:bg-blue-500 transition-all duration-150 ease-in-out hover:text-white dark:hover:text-black rounded-xl flex flex-col items-center justify-center text-blue-500 border border-blue-500"
         >
           <PlusIcon className="w-10 h-10 mb-1 block" />
           Create Post
