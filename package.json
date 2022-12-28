@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.13",
     "@prisma/client": "^4.8.0",
     "bcrypt": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
