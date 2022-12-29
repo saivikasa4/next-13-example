@@ -6,12 +6,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { title, content } = req.body
+    const { title, content, published } = req.body
 
     await client.post.create({
       data: {
         title,
         content,
+        published,
       },
     })
 
