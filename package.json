@@ -12,6 +12,8 @@
     "@heroicons/react": "^2.0.13",
     "@next/font": "^13.1.1",
     "@prisma/client": "^4.8.0",
+    "@tiptap/react": "^2.0.0-beta.209",
+    "@tiptap/starter-kit": "^2.0.0-beta.209",
     "bcrypt": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
     "next": "^13.1.1-canary.1",
