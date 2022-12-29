@@ -5,7 +5,7 @@ export async function createPost(
   content: string,
   isPublished: boolean
 ) {
-  const response = await fetch(`${BASE_URL}/api/post/create`, {
+  const response = await fetch(`${BASE_URL}/api/posts`, {
     method: "POST",
     body: JSON.stringify({ title, content, published: isPublished }),
     headers: {

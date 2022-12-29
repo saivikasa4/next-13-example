@@ -5,6 +5,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (req.method === "GET") {
+    const posts = await client.post.findMany({})
+
+    return res.status(200).json({ posts })
+  }
+
   if (req.method === "POST") {
     const { title, content, published } = req.body
 
