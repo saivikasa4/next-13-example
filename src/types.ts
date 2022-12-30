@@ -17,6 +17,13 @@ export type TUser = {
   email: string
 }
 
+export type TPost = {
+  id: number
+  title: string
+  content: string
+  author: string
+}
+
 export interface INextApiRequestWithUser extends NextApiRequest {
   user: TUser
 }
