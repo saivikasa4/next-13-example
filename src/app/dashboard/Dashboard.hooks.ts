@@ -5,15 +5,23 @@ import { getPosts } from "./Dashboard.helpers"
 
 export function usePosts() {
   const [posts, setPosts] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<any>(null)
 
   async function fetchPosts() {
-    const { posts } = await getPosts()
-    setPosts(posts)
+    try {
+      const { posts } = await getPosts()
+      setPosts(posts)
+      setIsLoading(false)
+    } catch (error) {
+      setError(error)
+      setIsLoading(false)
+    }
   }
 
   useEffect(() => {
     fetchPosts()
   }, [])
 
-  return posts
+  return { posts, isLoading, error }
 }

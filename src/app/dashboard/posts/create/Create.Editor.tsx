@@ -12,7 +12,7 @@ import { DRAFT, PUBLISHED } from "@/constants"
 
 function Editor() {
   const router = useRouter()
-  const [title, setTitle] = useState<string>("")
+  const [title, setTitle] = useState<string>("Untitled")
 
   const editor = useEditor({
     extensions: [StarterKit, Document, Paragraph, Text],
@@ -33,11 +33,7 @@ function Editor() {
   }
 
   async function publishPost() {
-    const status = await createPost(
-      "Untitled",
-      editor?.getHTML() ?? "",
-      PUBLISHED
-    )
+    const status = await createPost(title, editor?.getHTML() ?? "", PUBLISHED)
 
     if (status === 200) {
       router.push("/dashboard")
