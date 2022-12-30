@@ -4,7 +4,15 @@ import Link from "next/link"
 import { usePosts } from "./Dashboard.hooks"
 
 function Posts() {
-  const posts = usePosts()
+  const { posts, isLoading, error } = usePosts()
+
+  if (isLoading) {
+    return <p className="mt-10">Loading posts...</p>
+  }
+
+  if (error) {
+    return <p>{error.message}</p>
+  }
 
   return (
     <section className="mt-10">
