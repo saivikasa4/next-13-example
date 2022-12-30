@@ -15,7 +15,7 @@ function Posts() {
           posts.map((post: any) => (
             <Link
               key={post.id}
-              href="/dashboard/post/create"
+              href={`/dashboard/posts/${post.id}`}
               className="md:w-[160px] md:h-[160px] font-medium hover:bg-gray-50 hover:text-black transition-all duration-150 ease-in-out dark:hover:text-black rounded-xl flex items-center justify-center text-white border border-white"
             >
               {post.title}
