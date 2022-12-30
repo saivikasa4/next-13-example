@@ -13,10 +13,10 @@ An example project that uses latest features of Next.js 13
 
 ## Roadmap
 - [x] Custom email and password authentication
-- [ ] Replace sqlite with mysql or postgres using a service like planetscale or railway
-- [ ] Build dashboard pages
+- [x] Build dashboard pages
 - [ ] Add Tests
-- [ ] Markdown support
+- [ ] Handle types correctly
+- [ ] Improve UI and UX
 
 ## Getting Started
 1. Install the dependencies
