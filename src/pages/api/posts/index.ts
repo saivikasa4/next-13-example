@@ -1,10 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import client from "@/lib/prisma-db"
+import withAuth from "@/middleware/withAuth"
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") {
     const posts = await client.post.findMany({})
 
@@ -27,3 +25,5 @@ export default async function handler(
 
   return res.status(405).json({ message: "Method not allowed" })
 }
+
+export default withAuth(handler)
