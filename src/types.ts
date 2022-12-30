@@ -1,3 +1,5 @@
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next"
+
 export type TRegisterForm = {
   name: string
   email: string
@@ -10,7 +12,16 @@ export type TLoginForm = {
 }
 
 export type TUser = {
-  id: string
+  id: number
   name: string
   email: string
 }
+
+export interface INextApiRequestWithUser extends NextApiRequest {
+  user: TUser
+}
+
+export type TCustomNextApiHandler<T = any> = (
+  req: INextApiRequestWithUser,
+  res: NextApiResponse<T>
+) => unknown | Promise<unknown>

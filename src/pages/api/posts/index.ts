@@ -1,10 +1,13 @@
-import type { NextApiRequest, NextApiResponse } from "next"
 import client from "@/lib/prisma-db"
 import withAuth from "@/middleware/withAuth"
+import { INextApiRequestWithUser } from "@/types"
+import type { NextApiResponse } from "next"
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: INextApiRequestWithUser, res: NextApiResponse) {
   if (req.method === "GET") {
-    const posts = await client.post.findMany({})
+    const posts = await client.post.findMany({
+      where: { authorId: req.user.id },
+    })
 
     return res.status(200).json({ posts })
   }
@@ -14,6 +17,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     await client.post.create({
       data: {
+        authorId: req.user.id,
         title,
         content,
         published,
