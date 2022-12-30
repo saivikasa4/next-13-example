@@ -1,13 +1,15 @@
+import { TUser } from "@/types"
 import jwt from "jsonwebtoken"
-import { cookies } from "next/headers"
 
-function getSession() {
+function getSession(token: string | undefined) {
   try {
-    const token = cookies().get("token")?.value
     if (!token) {
       return null
     }
-    const decodedToken = jwt.verify(token, process.env.SECRET_KEY as string)
+    const decodedToken = jwt.verify(
+      token,
+      process.env.SECRET_KEY as string
+    ) as TUser
 
     if (decodedToken) {
       return decodedToken

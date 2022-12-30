@@ -1,4 +1,4 @@
-import getSession from "@/lib/get-session"
+import getUser from "@/lib/get-user"
 import { notFound } from "next/navigation"
 
 export default async function RootLayout({
@@ -6,7 +6,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const user = getSession()
+  const user = getUser()
 
   if (!user) {
     notFound()

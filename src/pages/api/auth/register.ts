@@ -54,7 +54,7 @@ export default async function handler(
         maxAge: 12 * 60 * 60, // 12 hours
         sameSite: "same-site",
         httpOnly: true,
-        path: "/dashboard",
+        path: "/",
       }
 
       return res

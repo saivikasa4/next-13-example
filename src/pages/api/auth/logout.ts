@@ -14,7 +14,7 @@ export default async function handler(
       maxAge: 0,
       sameSite: "same-site",
       httpOnly: true,
-      path: "/dashboard",
+      path: "/",
     }
 
     return res
