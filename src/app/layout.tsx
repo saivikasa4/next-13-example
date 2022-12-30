@@ -1,4 +1,7 @@
 import "./globals.css"
+import { Inter } from "@next/font/google"
+
+const primaryFont = Inter({ subsets: ["latin"], variable: "--font-primary" })
 
 export default function RootLayout({
   children,
@@ -6,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={primaryFont.variable}>
       <head>
         <title>Example App</title>
         <meta name="description" content="An example app" />
