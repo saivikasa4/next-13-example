@@ -4,6 +4,7 @@ import logout from "@/lib/logout"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { PlusIcon } from "@heroicons/react/24/solid"
+import Posts from "./Dashboard.Posts"
 
 function Dashboard() {
   const router = useRouter()
@@ -14,6 +15,7 @@ function Dashboard() {
       router.push("/accounts/login")
     }
   }
+
   return (
     <div>
       <header className="mb-10">
@@ -36,6 +38,8 @@ function Dashboard() {
           <PlusIcon className="w-10 h-10 mb-1 block" />
           Create Post
         </Link>
+
+        <Posts />
       </section>
     </div>
   )
