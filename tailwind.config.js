@@ -5,7 +5,11 @@ module.exports = {
     "./src/app/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        primary: ["var(--font-primary)"],
+      },
+    },
   },
   plugins: [],
 }
